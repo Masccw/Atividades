@@ -89,4 +89,23 @@ finally:
 
 #9
 
+class SaldoInsuficienteError(Exception):
+    pass
+
+def sacar(saldo, valor):
+    if valor > saldo:
+        raise SaldoInsuficienteError("Saldo insuficiente para saque!")
+    return saldo - valor
+
+try:
+    saldo_atual = float(input("Digite seu saldo atual: "))
+    valor_saque = float(input("Digite o valor a sacar: "))
+    novo_saldo = sacar(saldo_atual, valor_saque)
+    print(f"Saque realizado! Novo saldo: {novo_saldo}")
+except ValueError:
+    print("Erro: digite apenas números válidos.")
+except SaldoInsuficienteError as e:
+    print(f"Erro: {e}")
+
+
 
