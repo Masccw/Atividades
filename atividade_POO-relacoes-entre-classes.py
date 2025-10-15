@@ -111,13 +111,16 @@ class Carro:
     def __init__(self, modelo):
         self.modelo = modelo
         self.motor = Motor("Boxer")
-    
+        
     def informacao_carro(self):
         print(f"Modelo: {self.modelo}\nMotor: {self.motor.tipo}")
 
 volksvagen = Carro("Fusca")
 
 volksvagen.informacao_carro()
+
+del volksvagen
+print("\nO carro e seu motor foram destruídos.")
 print()
 
 #composição
@@ -146,5 +149,3 @@ minha_casa = Casa("Rua 12, 345")
 
 minha_casa.informacoes_casa()
 
-del minha_casa
-print("\nA casa foi deletada — os cômodos também deixaram de existir.")
